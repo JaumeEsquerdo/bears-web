@@ -1,14 +1,16 @@
-
+import { Contenido } from "./components/Contenido"
+import { Header } from "./components/Header"
+import { Mensaje } from "./components/Mensaje"
 
 function App() {
 
 
   return (
     <>
-      <div className="flex">
-        <p className=" text-blue-400">hola</p>
-        <p className="text-red-500">hola</p>
-      </div>
+      <Header />
+      <Contenido >
+        <Mensaje />
+      </Contenido>
     </>
   )
 }
