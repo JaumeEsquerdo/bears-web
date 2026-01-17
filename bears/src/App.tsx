@@ -5,7 +5,7 @@ import { Mensaje } from "./components/Mensaje"
 import { DoorOverlay } from "./components/DoorOverlay";
 import { motion, useTransform } from 'framer-motion'
 import { useTitleOverDoors } from "./hooks/useTitlteOverDoors";
-
+import { Footer } from "./components/Footer";
 
 const leftImages = [
   '/imgs/bear-amenaza-2.jpg',
@@ -73,7 +73,7 @@ function App() {
       <DoorOverlay isOpen={isOpen} toggle={toggleDoors} leftImages={leftImages} rightImages={rightImages} currentLeft={currentLeft} currentRight={currentRight}
         leftDoorRef={leftDoorRef} rightDoorRef={rightDoorRef}
       />
-
+      <Footer />
     </>
   )
 }
