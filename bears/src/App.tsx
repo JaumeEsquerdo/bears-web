@@ -6,6 +6,10 @@ import { DoorOverlay } from "./components/DoorOverlay";
 import { motion, useTransform } from 'framer-motion'
 import { useTitleOverDoors } from "./hooks/useTitlteOverDoors";
 import { Footer } from "./components/Footer";
+import { NavContenido } from "./components/NavContenido";
+import { usePreloadImages } from "./hooks/usePreloadImages";
+import Cargando from "./pages/Cargando";
+import { useMemo } from "react";
 
 const leftImages = [
   '/imgs/bear-amenaza-2.jpg',
@@ -28,6 +32,11 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLeft, setCurrentLeft] = useState(0)
   const [currentRight, setCurrentRight] = useState(0)
+  /* carga de imgs */
+  const allImages = useMemo(() => {
+    return [...leftImages, ...rightImages]
+  }, [])
+  const imagesLoaded = usePreloadImages(allImages);
 
   const titleRef = useRef<HTMLHeadingElement>(null)
   const leftDoorRef = useRef<HTMLDivElement>(null)
@@ -56,24 +65,36 @@ function App() {
 
   return (
     <>
-      <Header />
-      <motion.h1
-        ref={titleRef}
-        className="fixed z-40 text-6xl font-bold -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-        style={{ color }}
-      >
-        BEARS
-      </motion.h1>
-      <div>
-        <Contenido >
-          <Mensaje />
-        </Contenido>
-      </div>
-      {/* overlay de puertas */}
-      <DoorOverlay isOpen={isOpen} toggle={toggleDoors} leftImages={leftImages} rightImages={rightImages} currentLeft={currentLeft} currentRight={currentRight}
-        leftDoorRef={leftDoorRef} rightDoorRef={rightDoorRef}
-      />
-      <Footer />
+      {imagesLoaded ?
+        <>
+          <Header />
+          <motion.h1
+            ref={titleRef}
+            className="fixed z-40 text-6xl font-bold -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            style={{ color }}
+          >
+            BEARS
+          </motion.h1>
+
+          {/* contenido animado según nav */}
+          <div className="min-h-screen ">
+            <NavContenido />
+            <Contenido >
+              <Mensaje />
+            </Contenido>
+          </div>
+
+          {/* overlay de puertas */}
+          <DoorOverlay isOpen={isOpen} toggle={toggleDoors} leftImages={leftImages} rightImages={rightImages} currentLeft={currentLeft} currentRight={currentRight}
+            leftDoorRef={leftDoorRef} rightDoorRef={rightDoorRef}
+          />
+          <Footer />
+        </>
+        :
+        <Cargando />
+      }
+
+
     </>
   )
 }

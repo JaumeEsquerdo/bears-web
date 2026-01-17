@@ -38,15 +38,20 @@ export const DoorOverlay = ({
             <motion.div
                 ref={leftDoorRef}
                 className='w-1/2 h-full bg-cover cursor-pointer'
-                style={{ backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'center' }}
+                style={{
+                    backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
+                }}
                 variants={leftDoorVariants}
+
                 animate={isOpen ? 'open' : 'closed'}
                 onClick={toggle}
             />
             <motion.div
                 ref={rightDoorRef}
                 className='w-1/2 h-full bg-cover cursor-pointer'
-                style={{ backgroundImage: `url(${rightImages[currentRight]})`, backgroundPosition: 'center' }}
+                style={{
+                    backgroundImage: `url(${rightImages[currentRight]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
+                }}
                 variants={rightDoorVariants}
                 animate={isOpen ? 'open' : 'closed'}
                 onClick={toggle}
