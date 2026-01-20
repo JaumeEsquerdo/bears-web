@@ -32,7 +32,12 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLeft, setCurrentLeft] = useState(0)
   const [currentRight, setCurrentRight] = useState(0)
-  /* carga de imgs */
+
+  /* CARGA DE IMGS
+  - allImages se memoriza con useMemo para que su referencia no cambie entre renders.
+  - Esto asegura que usePreloadImages solo se ejecute una vez.
+  - Las imágenes se precargan en memoria del navegador y no se descargan de nuevo al cambiar currentLeft/currentRight.
+  */
   const allImages = useMemo(() => {
     return [...leftImages, ...rightImages]
   }, [])
@@ -77,8 +82,8 @@ function App() {
           </motion.h1>
 
           {/* contenido animado según nav */}
-          <div className="min-h-screen ">
-            <NavContenido />
+          <div className="relative h-screen">
+            <NavContenido isOpen={isOpen} />
             <Contenido >
               <Mensaje />
             </Contenido>
