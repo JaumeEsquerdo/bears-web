@@ -45,11 +45,11 @@ export const DoorOverlay = ({
 
     return (
         <>
-            <motion.div className='relative z-30 h-screen overflow-hidden pointer-events-none'
+            <motion.div className='relative z-30 w-full h-screen overflow-hidden pointer-events-none'
             >
                 <motion.div
                     ref={leftDoorRef}
-                    className='absolute w-1/2 h-full bg-cover cursor-pointer pointer-events-auto'
+                    className='absolute z-40 w-1/2 h-full bg-cover cursor-pointer pointer-events-auto'
                     style={{
                         backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
                     }}
@@ -60,7 +60,7 @@ export const DoorOverlay = ({
                 />
                 <motion.div
                     ref={rightDoorRef}
-                    className='absolute right-0 w-1/2 h-full bg-cover cursor-pointer pointer-events-auto'
+                    className='absolute right-0 z-40 w-1/2 h-full bg-cover cursor-pointer pointer-events-auto'
                     style={{
                         backgroundImage: `url(${rightImages[currentRight]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
                     }}
@@ -69,7 +69,7 @@ export const DoorOverlay = ({
                     onClick={toggle}
                 />
                 {/* contenido animado según nav */}
-                <div className="w-full h-full">
+                <div className="absolute inset-0 z-20 flex flex-col">
                     <NavContenido setSection={setSection} isOpen={isOpen} />
                     <Contenido  >
                         {section === 'historia' && <Historia />}
