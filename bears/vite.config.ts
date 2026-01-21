@@ -13,8 +13,8 @@ export default defineConfig({
       host: "localhost",
       port: 5175,
     },
-    headers: {
-      "Cache-Control": "public, max-age=31536000", // cache imágenes
-    },
+    // headers: {
+    //   "Cache-Control": "public, max-age=31536000", // cache imágenes
+    // },
   },
 });

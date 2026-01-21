@@ -7,10 +7,12 @@ export const Footer = ({ isOpen }: FooterProps) => {
 
     const footerVariants = {
         open: {
+            height: 'auto',
             y: 0,
             opacity: 1,
         },
         closed: {
+            height: 0,
             y: 100,
             opacity: 0,
         }
@@ -22,7 +24,7 @@ export const Footer = ({ isOpen }: FooterProps) => {
             initial='closed'
             animate={isOpen ? 'closed' : 'open'}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute left-0 z-50 flex justify-center w-full pt-5 bottom-10">
+            className="absolute left-0 z-50 flex justify-center w-full pt-5 overflow-hidden bottom-10">
             <h2 className="text-xl text-black">La naturaleza es salvaje</h2>
         </motion.footer>
     );

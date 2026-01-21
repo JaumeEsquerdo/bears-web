@@ -45,7 +45,7 @@ export const DoorOverlay = ({
 
     return (
         <>
-            <motion.div className='relative z-30 w-full h-screen overflow-hidden pointer-events-none'
+            <motion.div className='relative z-10 w-full h-screen overflow-hidden pointer-events-none'
             >
                 <motion.div
                     ref={leftDoorRef}
@@ -69,7 +69,7 @@ export const DoorOverlay = ({
                     onClick={toggle}
                 />
                 {/* contenido animado según nav */}
-                <div className="absolute inset-0 z-20 flex flex-col">
+                <div className="absolute inset-0 z-20 flex flex-col pointer-events-auto">
                     <NavContenido setSection={setSection} isOpen={isOpen} />
                     <Contenido  >
                         {section === 'historia' && <Historia />}
