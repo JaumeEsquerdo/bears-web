@@ -16,8 +16,8 @@ type DoorOverlayProps = {
     leftImages: string[],
     currentLeft: number,
     currentRight: number,
-    leftDoorRef: React.RefObject<HTMLDivElement | null>,
-    rightDoorRef: React.RefObject<HTMLDivElement | null>
+    leftDoorRef: React.RefObject<HTMLDivElement>,
+    rightDoorRef: React.RefObject<HTMLDivElement>
 }
 
 const leftDoorVariants: Variants = {
@@ -68,15 +68,16 @@ export const DoorOverlay = ({
                     animate={isOpen ? 'open' : 'closed'}
                     onClick={toggle}
                 />
+                {/* contenido animado según nav */}
+                <div className="w-full h-full">
+                    <NavContenido setSection={setSection} isOpen={isOpen} />
+                    <Contenido  >
+                        {section === 'historia' && <Historia />}
+                        {section === 'sobre' && <SobreEllos />}
+                    </Contenido>
+                </div>
             </motion.div>
-            {/* contenido animado según nav */}
-            <div className="absolute top-0 z-10 w-full h-full">
-                <NavContenido setSection={setSection} isOpen={isOpen} />
-                <Contenido  >
-                    {section === 'historia' && <Historia />}
-                    {section === 'sobre' && <SobreEllos />}
-                </Contenido>
-            </div>
+
 
         </>
     )
