@@ -22,12 +22,12 @@ type DoorOverlayProps = {
 
 const leftDoorVariants: Variants = {
     closed: { x: 0, y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
-    open: { x: '-50%', y: '20%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
+    open: { x: '-60%', y: '20%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
 }
 
 const rightDoorVariants: Variants = {
     closed: { x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
-    open: { x: '50%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
+    open: { x: '60%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
 }
 
 export const DoorOverlay = ({

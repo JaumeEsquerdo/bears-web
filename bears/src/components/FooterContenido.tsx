@@ -1,7 +1,16 @@
+
+
 export const FooterContenido = () => {
     return (
-        <footer className="absolute bottom-1/12 left1/2">
-            footer de contenido
+        <footer className="w-3/5 p-3.5">
+            <div className="flex justify-between w-full">
+
+                <div className="flex gap-3">
+                    <button className="cursor-pointer">CRÉDITOS</button>
+                    <button className="cursor-pointer">LEGAL</button>
+                </div>
+                <a href="https://github.com/JaumeEsquerdo" target="no-blank">© creado porJaume</a>
+            </div>
         </footer>
     );
 }

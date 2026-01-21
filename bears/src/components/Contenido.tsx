@@ -6,9 +6,9 @@ type Props = {
 }
 export const Contenido = ({ children }: Props) => {
     return (
-        <div className="relative flex flex-col items-center justify-center w-full min-h-screen bg-red-300">
+        <div className="relative flex flex-col items-center justify-between w-full min-h-screen bg-red-300">
 
-            <div >
+            <div className="w-3/5">
                 {children}
             </div>
             <FooterContenido />
