@@ -5,9 +5,16 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+    host: "localhost", // fuerza bind a localhost
+    port: 5173, // puerto fijo
+    strictPort: true, // falla si el puerto está ocupado
+    hmr: {
+      protocol: "ws", // fuerza websocket
+      host: "localhost",
+      port: 5173,
+    },
     headers: {
-      // Cachea todo por 1 año, para no reptir la carga de imgs de la portada
-      "Cache-Control": "public, max-age=31536000",
+      "Cache-Control": "public, max-age=31536000", // cache imágenes
     },
   },
 });

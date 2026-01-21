@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react"
-import { Contenido } from "./components/Contenido"
+
 import { Header } from "./components/Header"
-import { Mensaje } from "./components/Mensaje"
 import { DoorOverlay } from "./components/DoorOverlay";
 import { motion, useTransform } from 'framer-motion'
 import { useTitleOverDoors } from "./hooks/useTitlteOverDoors";
 import { Footer } from "./components/Footer";
-import { NavContenido } from "./components/NavContenido";
 import { usePreloadImages } from "./hooks/usePreloadImages";
 import Cargando from "./pages/Cargando";
 import { useMemo } from "react";
+
 
 const leftImages = [
   '/imgs/bear-amenaza-2.jpg',
@@ -28,10 +27,12 @@ const rightImages = [
   '/imgs/bear-dondeViven-3.jpg',
 ]
 
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLeft, setCurrentLeft] = useState(0)
   const [currentRight, setCurrentRight] = useState(0)
+
 
   /* CARGA DE IMGS
   - allImages se memoriza con useMemo para que su referencia no cambie entre renders.
@@ -72,7 +73,7 @@ function App() {
     <>
       {imagesLoaded ?
         <>
-          <Header />
+          <Header isOpen={isOpen} />
           <motion.h1
             ref={titleRef}
             className="fixed z-40 text-6xl font-bold -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -81,19 +82,11 @@ function App() {
             BEARS
           </motion.h1>
 
-          {/* contenido animado según nav */}
-          <div className="relative h-screen">
-            <NavContenido isOpen={isOpen} />
-            <Contenido >
-              <Mensaje />
-            </Contenido>
-          </div>
-
           {/* overlay de puertas */}
           <DoorOverlay isOpen={isOpen} toggle={toggleDoors} leftImages={leftImages} rightImages={rightImages} currentLeft={currentLeft} currentRight={currentRight}
             leftDoorRef={leftDoorRef} rightDoorRef={rightDoorRef}
           />
-          <Footer />
+          <Footer isOpen={isOpen} />
         </>
         :
         <Cargando />

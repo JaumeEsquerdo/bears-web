@@ -1,14 +1,23 @@
 
+import { motion } from 'framer-motion'
+
+type Section = 'historia' | 'sobre';
+
 type NavContenidoProps = {
     isOpen: boolean;
+    setSection: (section: Section) => void;
 };
 
-export const NavContenido = ({ isOpen }: NavContenidoProps) => {
+export const NavContenido = ({ isOpen, setSection }: NavContenidoProps) => {
 
     return (
-        <nav className={`${isOpen ? 'z-40' : ''} fixed flex flex-col gap-5 pointer-events-auto top-1/20 left-1/12`}>
-            <a className="text-2xl cursor-pointer" href="#">Historia</a>
-            <a className="text-2xl" href="#">Sobre ellos</a>
-        </nav>
+        <motion.nav
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -50 }}
+            transition={{ duration: 2.5 }}
+            className={` z-40 fixed flex flex-col gap-5 pointer-events-auto top-10 left-12`}>
+            <button className="text-2xl cursor-pointer" onClick={() => setSection('historia')}>Historia</button>
+            <button className="text-2xl cursor-pointer" onClick={() => setSection('sobre')}>Sobre ellos</button>
+        </motion.nav >
     );
 }
