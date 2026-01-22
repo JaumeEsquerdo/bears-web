@@ -2,12 +2,10 @@ import { motion, type Variants } from 'framer-motion'
 import { NavContenido } from './NavContenido';
 import Historia from './Historia';
 import { Contenido } from './Contenido';
-import { useState } from 'react';
 import SobreEllos from './SobreEllos';
+import { useSection } from '../hooks/useSection';
 
 
-
-type Section = 'historia' | 'sobre'
 
 type DoorOverlayProps = {
     isOpen: boolean,
@@ -41,7 +39,7 @@ export const DoorOverlay = ({
     rightDoorRef,
 }: DoorOverlayProps) => {
 
-    const [section, setSection] = useState<Section>('historia');
+    const { section, setSection } = useSection()
 
     return (
         <>

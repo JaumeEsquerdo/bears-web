@@ -6,10 +6,11 @@ export const FooterContenido = () => {
             <div className="flex justify-between w-full">
 
                 <div className="flex gap-3">
-                    <button className="cursor-pointer">CRÉDITOS</button>
-                    <button className="cursor-pointer">LEGAL</button>
+                    <button className="cursor-pointer text-main">CRÉDITOS</button>
+                    <button className="cursor-pointer text-main">LEGAL</button>
                 </div>
-                <a href="https://github.com/JaumeEsquerdo" target="no-blank">© creado por Jaume</a>
+                <a className="text-main" href="https://github.com/JaumeEsquerdo" target="_blank"
+                    rel="noopener noreferrer">© creado por Jaume</a>
             </div>
         </footer>
     );
