@@ -10,9 +10,11 @@ const Historia = () => {
                 <p className="text-base font-medium text-main">La muerte de Timothy Treadwell y su pareja Amie Huguenard en 2003 convierte esa aproximación en una fractura ética. ¿Son los osos responsables de cruzar una línea invisible, o es el ser humano quien invade un espacio gobernado por reglas ajenas? Entre la fascinación y la invasión, estas historias dejan una tensión abierta, sin respuesta posible.</p>
 
             </div>
-            <div className="flex flex-col gap-4">
-                <a className="text-main" href="https://www.filmaffinity.com/es/film867987.html">Película Bear-Like</a>
-                <a className="text-main" href="https://www.filmaffinity.com/es/film245053.html">Película Grizzly Man</a>
+            <div className="flex flex-col gap-4 pt-30">
+                <a className="text-main" href="https://www.filmaffinity.com/es/film867987.html" target="_blank"
+                    rel="noopener noreferrer">Película Bear-Like</a>
+                <a className="text-main" href="https://www.filmaffinity.com/es/film245053.html" target="_blank"
+                    rel="noopener noreferrer">Película Grizzly Man</a>
             </div>
         </div>
     );
