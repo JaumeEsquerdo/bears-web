@@ -5,7 +5,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}", // busca todas las clases en src
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          "Ubuntu",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
+    },
   },
   plugins: [],
 };

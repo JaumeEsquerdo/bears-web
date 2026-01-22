@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-body,
+/* body,
 h1,
 h2,
 h3,
@@ -10,6 +10,12 @@ li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+} */
+
+body {
+  font-family:
+    "Ubuntu", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* OCULTAR BARRA SCROLL */

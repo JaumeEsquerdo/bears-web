@@ -70,7 +70,7 @@ export const DoorOverlay = ({
                 />
                 {/* contenido animado según nav */}
                 <div className="absolute inset-0 z-20 flex flex-col pointer-events-auto">
-                    <NavContenido setSection={setSection} isOpen={isOpen} />
+                    <NavContenido setSection={setSection} isOpen={isOpen} section={section} />
                     <Contenido  >
                         {section === 'historia' && <Historia />}
                         {section === 'sobre' && <SobreEllos />}
