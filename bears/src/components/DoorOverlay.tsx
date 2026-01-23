@@ -67,7 +67,7 @@ export const DoorOverlay = ({
                     onClick={toggle}
                 />
                 {/* contenido animado según nav */}
-                <div className="relative z-20 flex flex-col w-full h-full bg-red-300 pointer-events-auto verflow-y-auto">
+                <div className="relative z-20 flex flex-col w-full h-full bg-red-100 pointer-events-auto verflow-y-auto">
                     <NavContenido setSection={setSection} isOpen={isOpen} section={section} />
                     <Contenido  >
                         {section === 'historia' && <Historia />}

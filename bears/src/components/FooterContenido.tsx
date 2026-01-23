@@ -11,8 +11,8 @@ export const FooterContenido = () => {
                 animate={{ y: footerOpen ? -20 : 0 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
-                <button onClick={() => setFooterOpen(!footerOpen)} className="cursor-pointer text-main">CRÉDITOS</button>
-                <a className="text-main" href="https://github.com/JaumeEsquerdo" target="_blank"
+                <button onClick={() => setFooterOpen(!footerOpen)} className="text-sm cursor-pointer text-main">CRÉDITOS</button>
+                <a className="text-sm text-main" href="https://github.com/JaumeEsquerdo" target="_blank"
                     rel="noopener noreferrer">© creado por Jaume</a>
             </motion.div>
             <motion.div

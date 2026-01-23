@@ -15,10 +15,10 @@ export const NavContenido = ({ isOpen, setSection, section }: NavContenidoProps)
         <motion.nav
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -50 }}
-            transition={{ duration: 2.5 }}
+            transition={{ duration: 0.8 }}
             className={` z-40 fixed flex flex-col items-start gap-5 pointer-events-auto top-10 left-12`}>
-            <button className={`text-2xl text-main ${section === 'historia' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('historia')}>Historia</button>
-            <button className={`text-2xl text-main ${section === 'sobre' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('sobre')}>Sobre ellos</button>
+            <button className={`text-lg text-main ${section === 'historia' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('historia')}>Historia</button>
+            <button className={`text-lg text-main ${section === 'sobre' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('sobre')}>Sobre ellos</button>
         </motion.nav >
     );
 }
