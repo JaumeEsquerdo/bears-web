@@ -73,7 +73,7 @@ function App() {
     <>
       {imagesLoaded ?
         <>
-          <Header isOpen={isOpen} />
+          <Header isOpen={isOpen} setIsOpen={setIsOpen} />
           <motion.h1
             ref={titleRef}
             className="fixed z-40 text-6xl font-bold -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 left-1/2"

@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion'
+import { useSection } from '../hooks/useSection'
+import type { Dispatch, SetStateAction } from 'react';
+
 
 type HeaderProps = {
     isOpen: boolean
+    /* Dispatch: función que recibe un argumento de tipo A y no devuelve nada (void) */
+    /* y SetStateAction: qué puedes pasarle al setter: */
+    setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export const Header = ({ isOpen }: HeaderProps) => {
+export const Header = ({ isOpen, setIsOpen }: HeaderProps) => {
+    const { setSection } = useSection()
 
     const headerVariants = {
         open: {
@@ -15,8 +22,19 @@ export const Header = ({ isOpen }: HeaderProps) => {
             y: -100,
             opacity: 0,
         }
-
     }
+
+    const openHistoria = () => {
+        if (!isOpen) {
+            setSection('historia')
+            setIsOpen(true)
+        }
+    };
+    const openSobreEllos = () => {
+        setSection('sobre')
+        setIsOpen(true)
+    };
+
     return (
         <motion.header
             variants={headerVariants}
@@ -24,8 +42,8 @@ export const Header = ({ isOpen }: HeaderProps) => {
             initial='open'
             animate={isOpen ? 'closed' : 'open'}
             className="absolute flex justify-center gap-4 pt-5 text-white left-1/2 w-fit top-1/25 -translate-1/2 z-1000">
-            <a className="text-2xl font-bold" href="#">Historia</a>
-            <a className="text-2xl font-bold" href="#">Sobre ellos</a>
+            <button className="text-2xl font-bold cursor-pointer" onClick={openHistoria}>Historia</button>
+            <button className="text-2xl font-bold cursor-pointer" onClick={openSobreEllos}>Sobre ellos</button>
         </motion.header>
     );
 }
