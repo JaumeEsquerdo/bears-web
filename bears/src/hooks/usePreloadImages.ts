@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-/* hook para hacer saber si todas las imgs de la portada están listas */
-/* sirve para pantalla inicial / loader */
+/* hook para hacer saber si todas las imgs de la portada están listas
+'No renderices nada hasta que esté TODO descargado'
+*/
 
 export const usePreloadImages = (images: string[]) => {
   const [loaded, setLoaded] = useState(false);

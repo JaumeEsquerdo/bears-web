@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+/* El navegador descarga las imágenes una vez
+El hook solo decide QUÉ imagen renderizar seguro */
+
 export const useImageCarousel = (imgs: string[], interval = 3000) => {
   const [displayImg, setDisplayImg] = useState(imgs[0]);
   const [isPaused, setIsPaused] = useState(false);
@@ -7,7 +10,7 @@ export const useImageCarousel = (imgs: string[], interval = 3000) => {
 
   /* Referencia al setInterval para poder limpiarlo */
   const timerRef = useRef<number | null>(null);
-  /*Set que recuerda qué imágenes ya se han cargado */
+  /*Set que recuerda qué imágenes ya se han cargado sin causar renders */
   const loadedRef = useRef<Set<string>>(new Set());
   /* guardamos las ref de las img */
   const preloadedImagesRef = useRef<HTMLImageElement[]>([]);

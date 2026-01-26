@@ -9,7 +9,7 @@ export const Contenido = ({ children }: Props) => {
     return (
 
         <motion.div
-            className="relative flex flex-col items-center justify-between w-full min-h-screen p-8 overflow-hidden"
+            className="relative flex flex-col items-center w-full min-h-screen p-8 overflow-hidden"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
