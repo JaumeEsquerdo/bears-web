@@ -50,7 +50,7 @@ export const DoorOverlay = ({
                     ref={leftDoorRef}
                     className='fixed top-0 left-0 z-40 w-1/2 h-screen bg-cover cursor-pointer pointer-events-auto'
                     style={{
-                        backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
+                        backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'left', transition: 'background-image 0.3s ease'
                     }}
                     variants={leftDoorVariants}
 

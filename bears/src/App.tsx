@@ -11,20 +11,16 @@ import { useMemo } from "react";
 
 
 const leftImages = [
-  '/imgs/bear-amenaza-2.jpg',
-  '/imgs/bear-dondeViven-3.jpg',
-  '/imgs/bear-amenaza-3.jpg',
-  '/imgs/bear-futuro-2.jpg',
-  '/imgs/bear-dondeViven-2.jpg',
-  '/imgs/bear-futuro.jpg',
+  '/imgs/bear-imgLeft-1.png',
+  '/imgs/bear-imgRight-1.png',
+  '/imgs/bear-imgLeft-3.png',
+  '/imgs/bear-imgLeft-4.png',
 ]
 const rightImages = [
-  '/imgs/bear-otoño.webp',
-  '/imgs/bear-interaccion-2.jpg',
-  '/imgs/bear-futuro-3.jpg',
-  '/imgs/bear-amenaza.jpg',
-  '/imgs/bear-futuro-4.jpg',
-  '/imgs/bear-dondeViven-3.jpg',
+  '/imgs/bear-imgLeft-2.png',
+  '/imgs/bear-imgRight-2.png',
+  '/imgs/bear-imgRight-3.png',
+  '/imgs/bear-imgRight-4.png',
 ]
 
 
@@ -61,7 +57,7 @@ function App() {
       setCurrentLeft(prev => (prev + 1) % leftImages.length)
       setCurrentRight(prev => (prev + 1) % rightImages.length)
 
-    }, 2000)
+    }, 4000)
     return () => clearInterval(interval)
   }, [isOpen])
 
