@@ -1,9 +1,10 @@
-import { motion, type Variants } from 'framer-motion'
+import { motion, type Variants, AnimatePresence } from 'framer-motion'
 import { NavContenido } from './NavContenido';
 import Historia from './Historia';
 import { Contenido } from './Contenido';
 import SobreEllos from './SobreEllos';
 import { useSection } from '../hooks/useSection';
+
 
 
 
@@ -67,12 +68,14 @@ export const DoorOverlay = ({
                     onClick={toggle}
                 />
                 {/* contenido animado según nav */}
-                <div className="relative z-20 flex flex-col w-full h-full overflow-y-auto bg-red-100 pointer-events-auto">
+                <div className="relative z-20 flex flex-col w-full h-full overflow-y-auto bg-[#FCFEFC] pointer-events-auto">
                     <NavContenido setSection={setSection} isOpen={isOpen} section={section} />
-                    <Contenido  >
-                        {section === 'historia' && <Historia />}
-                        {section === 'sobre' && <SobreEllos />}
-                    </Contenido>
+                    <AnimatePresence mode='wait'>
+                        <Contenido key={section}  >
+                            {section === 'historia' && <Historia />}
+                            {section === 'sobre' && <SobreEllos />}
+                        </Contenido>
+                    </AnimatePresence>
                 </div>
             </motion.div>
 

@@ -11,9 +11,9 @@ const Historia = () => {
 
             </div>
             <div className="flex flex-col gap-4 pt-30">
-                <a className="text-sm text-main w-fit" href="https://www.filmaffinity.com/es/film867987.html" target="_blank"
+                <a className="text-sm font-semibold text-main w-fit" href="https://www.filmaffinity.com/es/film867987.html" target="_blank"
                     rel="noopener noreferrer">Película Bear-Like</a>
-                <a className="text-sm text-main w-fit" href="https://www.filmaffinity.com/es/film245053.html" target="_blank"
+                <a className="text-sm font-semibold text-main w-fit" href="https://www.filmaffinity.com/es/film245053.html" target="_blank"
                     rel="noopener noreferrer">Película Grizzly Man</a>
             </div>
         </div>
