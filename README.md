@@ -82,3 +82,4 @@ npm run dev
 
 - CMS dinámico: Actualmente sobreEllosData está en JSON estático sobreEllos.ts:8-81 . Se podría implementar un CMS headless para actualizar contenido sin tocar código.
 - Accesibilidad: Crear lógica q deje entrar por las puertas y manejarse con las keyboards, actualmente casi que solo se puede hacer mediante clicks.
+- Crossfade: Se podría realizar un crossfade del carousel de imgs que pasan cada x segundos en la sección 'Sobre Ellos'. Poniendo un div como principal y (así nunca tener un frame vacío porq siempre habría una img puesta), donde se juegue con dos imgs cambiando su src de cada una. Una img sería la previa y la otra la siguiente, así se podría hacer un face con opacidades.
