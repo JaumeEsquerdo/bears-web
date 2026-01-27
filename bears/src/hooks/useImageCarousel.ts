@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 /* El navegador descarga las imágenes una vez
 El hook solo decide QUÉ imagen renderizar seguro */
 
-export const useImageCarousel = (imgs: string[], interval = 3000) => {
+export const useImageCarousel = (imgs: string[], interval = 3400) => {
   const [displayImg, setDisplayImg] = useState(imgs[0]);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | undefined>(undefined);
