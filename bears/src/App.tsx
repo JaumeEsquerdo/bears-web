@@ -47,7 +47,7 @@ function App() {
   // MotionValue (0–1) que indica cuánto del título está cubierto por las puertas
   const overlap = useTitleOverDoors(titleRef, [leftDoorRef, rightDoorRef])
   // Interpola el color del título según el solapamiento (cerrado → oscuro, abierto → blanco)
-  const color = useTransform(overlap, [0, 1], ['#333333', '#ffffff',])
+  const color = useTransform(overlap, [0, 1], ['#333333', '#FCFEFC',])
 
   // para cambiar cada x segundo de imgs cuando están cerradas
   useEffect(() => {
