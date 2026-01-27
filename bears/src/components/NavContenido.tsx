@@ -17,8 +17,13 @@ export const NavContenido = ({ isOpen, setSection, section }: NavContenidoProps)
             animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -50 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className={` z-40 fixed flex flex-col items-start gap-5 pointer-events-auto top-10 left-12`}>
-            <button className={`text-xl text-main ${section === 'historia' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('historia')}>Historia</button>
-            <button className={`text-xl text-main ${section === 'sobre' ? 'font-extrabold' : ''} cursor-pointer`} onClick={() => setSection('sobre')}>Sobre ellos</button>
+            <button
+                data-active={section === 'historia'}
+                className={`text-xl text-main data-[active=true]:font-extrabold transition-transform duration-200 data-[active=true]:scale-105
+ cursor-pointer`} onClick={() => setSection('historia')}>Historia</button>
+            <button
+                data-active={section === 'sobre'}
+                className={`text-xl text-main data-[active=true]:font-extrabold transition-transform duration-200 data-[active=true]:scale-105 cursor-pointer`} onClick={() => setSection('sobre')}>Sobre ellos</button>
         </motion.nav >
     );
 }

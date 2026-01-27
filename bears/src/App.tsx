@@ -11,17 +11,18 @@ import { useMemo } from "react";
 
 
 const leftImages = [
-  '/imgs/bear-imgLeft-1.png',
   '/imgs/bear-imgRight-1.png',
-  '/imgs/bear-imgLeft-3.png',
   '/imgs/bear-imgLeft-4.png',
+  '/imgs/bear-imgLeft-3.png',
+  '/imgs/bear-imgLeft-5.png',
 ]
 const rightImages = [
-  '/imgs/bear-imgLeft-2.png',
   '/imgs/bear-imgRight-2.png',
   '/imgs/bear-imgRight-3.png',
-  '/imgs/bear-imgRight-4.png',
+  '/imgs/bear-imgLeft-2.png',
+  '/imgs/bear-imgRight-5.png',
 ]
+
 
 
 function App() {
