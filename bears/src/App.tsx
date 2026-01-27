@@ -73,7 +73,7 @@ function App() {
           <Header isOpen={isOpen} setIsOpen={setIsOpen} />
           <motion.h1
             ref={titleRef}
-            className="fixed z-40 text-6xl font-bold -translate-x-1/2 -translate-y-1/2 pointer-events-none top-[36%] left-1/2"
+            className="fixed z-40 text-4xl md:text-6xl font-bold -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 md:top-[36%] left-1/2"
             style={{ color }}
           >
             BEARS

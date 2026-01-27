@@ -20,7 +20,7 @@ const ImagePopup = ({ img, onClose }: ImagePopupProps) => {
             <motion.img src={img} alt={`Imagen ampliada`}
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
-                className="max-w-[60%] max-h-[60%]"
+                className="max-w-[90%] object-cover object-left h-72 max-h-full md:object-contain md:h-auto md:max-w-[60%] md:max-h-[60%]"
                 /* para q no se ejecute el click del padre */
                 onClick={(e) => e.stopPropagation()}
             />

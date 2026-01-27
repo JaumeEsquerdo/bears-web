@@ -25,12 +25,10 @@ export const FooterContenido = () => {
     /* meto un padding top en el footer alto para poder animar sin que justify-between me mueva contenido por tener huecos incompletos en el alyout, y asi ganar estabilidad....
     también podria haber jugado con flex 1 en el contenido, pero en este caso por temas de robustez he preferido este  */
     return (
-        <footer className="w-3/5">
-            <motion.div className="flex justify-between w-full pt-48 pb-6"
-
-            >
-                <button onClick={() => setFooterOpen(!footerOpen)} className="text-sm cursor-pointer text-main">CRÉDITOS</button>
-                <a className="text-sm text-main" href="https://github.com/JaumeEsquerdo" target="_blank"
+        <footer className="w-full pb-24 md:w-3/5 md:pb-0">
+            <motion.div className="flex justify-between w-full pt-20 pb-12 md:pb-6 md:pt-48">
+                <button onClick={() => setFooterOpen(!footerOpen)} className={`text-sm transition-all  ${footerOpen ? 'font-medium' : 'font-normal hover:text-gray-500'} duration-200 cursor-pointer text-main`}>CRÉDITOS</button>
+                <a className="text-sm transition-colors duration-200 text-main hover:text-gray-500" href="https://github.com/JaumeEsquerdo" target="_blank"
                     rel="noopener noreferrer">© creado por Jaume</a>
             </motion.div>
             <motion.div
@@ -40,7 +38,7 @@ export const FooterContenido = () => {
                     opacity: footerOpen ? 1 : 0,
                 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-                className="flex flex-col gap-3.5 pb-6 w-[48%] overflow-hidden"
+                className="flex flex-col gap-3.5 pb-6 md:w-[48%] overflow-hidden"
             >
                 <div ref={contentRef} className="flex flex-col gap-3.5 pb-6 ">
                     <p className="text-sm text-main">Las fotografías que aparecen en esta web son propiedad de David Bittner, investigador y protagonista de la película documental Bear‑Like (Como un Oso), en la que se relatan encuentros cercanos con osos pardos (grizzly) en la península de Alaska.</p>

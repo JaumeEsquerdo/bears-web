@@ -41,10 +41,10 @@ export const Header = ({ isOpen, setIsOpen }: HeaderProps) => {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             initial='open'
             animate={isOpen ? 'closed' : 'open'}
-            className="fixed flex justify-center pt-5 -translate-x-1/2 left-1/2 w-[-webkit-fill-available] top-1/25 z-1000">
-            <nav className="grid grid-cols-2 gap-6 w-[-webkit-fill-available]">
-                <button className="text-2xl font-bold text-white transition-colors duration-200 cursor-pointer hover:text-gray-200" onClick={openHistoria}>Historia</button>
-                <button className="text-2xl font-bold text-white transition-colors duration-200 cursor-pointer hover:text-gray-200" onClick={openSobreEllos}>Sobre ellos</button>
+            className="fixed flex justify-center w-full pt-5 -translate-x-1/2 left-1/2 md:w-[-webkit-fill-available] top-1/25 z-1000">
+            <nav className="grid grid-cols-2 justify-items-center gap-6 w-fit md:w-[-webkit-fill-available]">
+                <button className="text-lg font-bold text-white transition-colors duration-200 cursor-pointer w-fit md:text-2xl hover:text-gray-200" onClick={openHistoria}>Historia</button>
+                <button className="text-lg font-bold text-white transition-colors duration-200 cursor-pointer w-fit md:text-2xl hover:text-gray-200" onClick={openSobreEllos}>Sobre ellos</button>
             </nav>
         </motion.header>
     );

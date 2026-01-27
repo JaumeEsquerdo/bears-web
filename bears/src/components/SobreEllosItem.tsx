@@ -20,11 +20,10 @@ export const SobreEllosItem = ({ data }: Props) => {
                     key={currentImg}
                     src={currentImg}
                     alt={`Imagen sobre ${data.title}`}
-
-                    initial={{ opacity: 0.7, }}
+                    initial={{ opacity: 0.8, }}
                     animate={{ opacity: 1, }}
                     transition={{ duration: 2, ease: [0.4, 0, 0.2, 1] }}
-                    className="cursor-pointer"
+                    className="transition duration-200 cursor-pointer hover:saturate-120 hover:scale-102"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     onClick={() => setSelectedImg(currentImg)}

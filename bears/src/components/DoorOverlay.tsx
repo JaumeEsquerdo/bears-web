@@ -4,6 +4,7 @@ import Historia from './Historia';
 import { Contenido } from './Contenido';
 import SobreEllos from './SobreEllos';
 import { useSection } from '../hooks/useSection';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 
 
@@ -19,12 +20,22 @@ type DoorOverlayProps = {
     rightDoorRef: React.RefObject<HTMLDivElement>
 }
 
-const leftDoorVariants: Variants = {
+const leftDoorVariantsMobile: Variants = {
+    closed: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
+    open: { y: '-80%', transition: { duration: 1.2, ease: [0.77, 0, 0.175, 1] } }
+};
+
+const rightDoorVariantsMobile: Variants = {
+    closed: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
+    open: { y: '80%', transition: { duration: 1.2, ease: [0.77, 0, 0.175, 1] } }
+};
+
+const leftDoorVariantsDesktop: Variants = {
     closed: { x: 0, y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
     open: { x: '-60%', y: '20%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
 }
 
-const rightDoorVariants: Variants = {
+const rightDoorVariantsDesktop: Variants = {
     closed: { x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.76, 1] } },
     open: { x: '60%', transition: { duration: 1, ease: [0.77, 0, 0.175, 1] } }
 }
@@ -40,6 +51,7 @@ export const DoorOverlay = ({
     rightDoorRef,
 }: DoorOverlayProps) => {
 
+    const isMobile = useIsMobile({})
     const { section, setSection } = useSection()
 
     return (
@@ -48,22 +60,22 @@ export const DoorOverlay = ({
             >
                 <motion.div
                     ref={leftDoorRef}
-                    className='fixed top-0 left-0 z-40 w-1/2 h-screen bg-cover cursor-pointer pointer-events-auto'
+                    className='fixed top-0 left-0 z-40 w-full bg-cover cursor-pointer pointer-events-auto h-1/2 md:h-screen md:top-0 md:w-1/2'
                     style={{
                         backgroundImage: `url(${leftImages[currentLeft]})`, backgroundPosition: 'left', transition: 'background-image 0.3s ease'
                     }}
-                    variants={leftDoorVariants}
+                    variants={isMobile ? leftDoorVariantsMobile : leftDoorVariantsDesktop}
 
                     animate={isOpen ? 'open' : 'closed'}
                     onClick={toggle}
                 />
                 <motion.div
                     ref={rightDoorRef}
-                    className='fixed top-0 right-0 z-40 w-1/2 h-screen bg-cover cursor-pointer pointer-events-auto'
+                    className='fixed bottom-0 right-0 z-40 w-full bg-cover cursor-pointer pointer-events-auto h-1/2 md:bottom-0 md:h-screen md:top-0 md:w-1/2'
                     style={{
                         backgroundImage: `url(${rightImages[currentRight]})`, backgroundPosition: 'center', transition: 'background-image 0.3s ease'
                     }}
-                    variants={rightDoorVariants}
+                    variants={isMobile ? rightDoorVariantsMobile : rightDoorVariantsDesktop}
                     animate={isOpen ? 'open' : 'closed'}
                     onClick={toggle}
                 />

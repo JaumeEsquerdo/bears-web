@@ -1,7 +1,7 @@
 
 const Historia = () => {
     return (
-        <div className="flex flex-col flex-1 pb-40">
+        <div className="flex flex-col flex-1 pb-12 md:pb-40">
             <div className="flex flex-col gap-5">
                 <p className="text-sm text-main ">El ser humano observa lo salvaje desde la distancia hasta que la distancia deja de ser suficiente. La necesidad de comprender, documentar y nombrar lo que no controla acaba convirtiéndose en un acto de aproximación constante, donde la curiosidad se confunde con pertenencia. En ese gesto aparece una pregunta silenciosa: si mirar ya es una forma de intervenir.</p>
                 <p className="text-sm text-main">La naturaleza, sin embargo, no responde a esa intención. No hay moral, ni empatía, ni concesiones. La supervivencia dicta decisiones que resultan incómodas para la mirada humana: crías abandonadas, territorios defendidos sin aviso, equilibrios que no admiten correcciones externas. Lo salvaje no necesita ser entendido para existir.
@@ -10,9 +10,9 @@ const Historia = () => {
 
             </div>
             <div className="flex flex-col gap-4 pt-30">
-                <a className="text-sm font-semibold text-main w-fit" href="https://www.filmaffinity.com/es/film867987.html" target="_blank"
+                <a className="text-sm font-semibold transition-colors duration-200 hover:text-gray-500 text-main w-fit" href="https://www.filmaffinity.com/es/film867987.html" target="_blank"
                     rel="noopener noreferrer">Película Bear-Like</a>
-                <a className="text-sm font-semibold text-main w-fit" href="https://www.filmaffinity.com/es/film245053.html" target="_blank"
+                <a className="text-sm font-semibold hover:text-gray-500 text-main w-fit" href="https://www.filmaffinity.com/es/film245053.html" target="_blank"
                     rel="noopener noreferrer">Película Grizzly Man</a>
             </div>
         </div>
