@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -13,8 +13,14 @@ export default defineConfig({
       host: "localhost",
       port: 5175,
     },
+
     // headers: {
     //   "Cache-Control": "public, max-age=31536000", // cache imágenes
     // },
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.ts",
+    globals: true,
   },
 });
