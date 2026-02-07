@@ -26,12 +26,14 @@ export const FooterContenido = () => {
     también podria haber jugado con flex 1 en el contenido, pero en este caso por temas de robustez he preferido este  */
     return (
         <footer className="w-full pb-24 md:w-3/5 md:pb-0">
-            <motion.div id="footer-contenido" className="flex justify-between w-full pt-20 pb-12 md:pb-6 md:pt-48">
-                <button aria-expanded={footerOpen} aria-controls="footer-contenido" onClick={() => setFooterOpen(!footerOpen)} className={`text-sm transition-all  ${footerOpen ? 'font-medium' : 'font-normal hover:text-gray-500'} duration-200 cursor-pointer text-main`}>CRÉDITOS</button>
+            <motion.div className="flex justify-between w-full pt-20 pb-12 md:pb-6 md:pt-48">
+                <button aria-expanded={footerOpen} aria-controls="footer-creditos" onClick={() => setFooterOpen(!footerOpen)} className={`text-sm transition-all  ${footerOpen ? 'font-medium' : 'font-normal hover:text-gray-500'} duration-200 cursor-pointer text-main`}>CRÉDITOS</button>
                 <a className="text-sm transition-colors duration-200 text-main hover:text-gray-500" href="https://github.com/JaumeEsquerdo" target="_blank"
                     rel="noopener noreferrer">© creado por Jaume</a>
             </motion.div>
             <motion.div
+                data-testid="footer-creditos"
+                aria-hidden={footerOpen === false}
                 initial={false}
                 animate={{
                     height: footerOpen ? height : 0,

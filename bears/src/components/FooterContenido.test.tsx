@@ -27,11 +27,14 @@ describe('Componente Footer del contenido', () => {
       <FooterContenido /> // renderiza el componente con contexto
     );
     const button = screen.getByRole('button', { 'name': /créditos/i })
+    const content = screen.getByTestId('footer-creditos')
 
     expect(button).toHaveAttribute('aria-expanded', 'false')
+    expect(content).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(button)
 
+    expect(content).toHaveAttribute('aria-hidden', 'false')
     expect(button).toHaveAttribute('aria-expanded', 'true')
   })
 })
