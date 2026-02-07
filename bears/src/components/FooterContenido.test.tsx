@@ -1,5 +1,5 @@
 import { FooterContenido } from './FooterContenido'
-import { screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
 import { test, describe, expect } from 'vitest'
 import { render } from '../tests/test-utils'
 
@@ -14,11 +14,24 @@ import { render } from '../tests/test-utils'
 */
 
 describe('Componente Footer del contenido', () => {
-    test('test del btn de crédtios', () => {
-        render(
-            <FooterContenido /> // renderiza el componente con contexto
-        );
+  test('test del btn de crédtios', () => {
+    render(
+      <FooterContenido /> // renderiza el componente con contexto
+    );
 
-        expect(screen.getByText(/créditos/i)).toBeInTheDocument();
-    })
+    expect(screen.getByText(/créditos/i)).toBeInTheDocument();
+  })
+
+  test('muestra los créditos solo al hacer click', () => {
+    render(
+      <FooterContenido /> // renderiza el componente con contexto
+    );
+    const button = screen.getByRole('button', { 'name': /créditos/i })
+
+    expect(button).toHaveAttribute('aria-expanded', 'false')
+
+    fireEvent.click(button)
+
+    expect(button).toHaveAttribute('aria-expanded', 'true')
+  })
 })
