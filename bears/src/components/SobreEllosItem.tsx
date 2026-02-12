@@ -22,6 +22,8 @@ export const SobreEllosItem = ({ data }: Props) => {
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 onClick={() => setSelectedImg(currentImg)}
+                width='600'
+                height='400'
             />
 
             <p className="text-sm text-main">{data.paragraph}</p>
