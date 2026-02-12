@@ -18,12 +18,12 @@ export const SobreEllosItem = ({ data }: Props) => {
             <img
                 src={currentImg}
                 alt={`Imagen sobre ${data.title}`}
-                className="transition duration-200 cursor-pointer hover:saturate-120 hover:scale-102"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 onClick={() => setSelectedImg(currentImg)}
                 width='600'
                 height='400'
+                className="aspect[3/2] transition duration-200 cursor-pointer hover:saturate-120 hover:scale-102"
             />
 
             <p className="text-sm text-main">{data.paragraph}</p>
